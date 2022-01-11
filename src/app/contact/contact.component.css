@@ -1,0 +1,8 @@
+.header{
+    min-height: 100vh;
+    width:100%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn0hm8bTJM1yspQ060T_VVgU-98KwV22JMCg&usqp=CAU");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

@@ -1,0 +1,73 @@
+<section class="center">
+<h1>Owner's Private DashBoard</h1>
+<button class="btn btn-success" type="button" data-bs-toggle="modal"
+data-bs-target="#exampleModal"> Add Department Details</button>
+</section>
+
+<section >
+<table class="table table-hover table-dark table-bordered">
+    <thead>
+        <tr>
+            <th>Department Id</th>
+            <th>Department Name</th>
+            <th>Description</th>
+            <th>No Of Employees</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dashboard of dashboard">
+            <td>{{dashboard.departmentID}}</td>
+            <td>{{dashboard.departmentName}}</td>
+            <td>{{dashboard.desc}}</td>
+            <td>{{dashboard.no_of_Emp}}</td>          
+        </tr>
+    </tbody>
+</table>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Booking Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Department ID</label>
+                        <input type="text" formControlName="did" placeholder="Department ID" class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Department Name</label>
+                        <input type="text" formControlName="dname" placeholder="Department Name" class="form-control"
+                            id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Description</label>
+                        <input type="text" formControlName="desc" placeholder="Description" class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">No Of Employees</label>
+                        <input type="text" formControlName="noe" placeholder="No of Employees" class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancle</button>
+              
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal"(click)="addDeptto()">Add Details</button>
+            
+            
+            </div>
+        </div>
+    </div>
+</div>
+
