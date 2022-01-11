@@ -45,17 +45,17 @@ export class ReservationComponent implements OnInit {
     });
   }
   addReservations() {
-    if((this.reserv.bookingid!=null&& this.reserv.oomid!=null&&this.reserv.checkin!=null&&this.reserv.checkout!=null&&this.reserv.noofguest!=null&&this.reserv.totalPayment!=null)
-    &&(this.reserv.bookingid!=''&& this.reserv.oomid!=''&&this.reserv.checkin!=''&&this.reserv.checkout!=''&&this.reserv.noofguest!=''&&this.reserv.totalPayment!=''))
-  {
+    // if((this.reserv.bookingid!=null&& this.reserv.oomid!=null&&this.reserv.checkin!=null&&this.reserv.checkout!=null&&this.reserv.noofguest!=null&&this.reserv.totalPayment!=null)
+    // &&(this.reserv.bookingid!=''&& this.reserv.oomid!=''&&this.reserv.checkin!=''&&this.reserv.checkout!=''&&this.reserv.noofguest!=''&&this.reserv.totalPayment!=''))
+  // {
     this.reservationService.addReservationList(this.reservation).subscribe(data => {
     this.reservation = data.resList;
     });
-  }
-  else{
-    // alert("fields are empty!!");
-    console.log("Fields are empty!!");
-  }
+  // }
+  // else{
+  //   alert("fields are empty!!");
+  //   console.log("Fields are empty!!");
+  // }
   }
 
   updateReservations() {
@@ -76,6 +76,18 @@ export class ReservationComponent implements OnInit {
     this.res.checkout = this.formValue.value.checkout;
     this.res.numOfGuests = this.formValue.value.noofguest;
     this.res.finalPrice = this.formValue.value.totalpayment;
+    if((this.reserv.bookingid!=null&& this.reserv.oomid!=null&&this.reserv.checkin!=null&&this.reserv.checkout!=null&&this.reserv.noofguest!=null&&this.reserv.totalPayment!=null)
+    &&(this.reserv.bookingid!=''&& this.reserv.oomid!=''&&this.reserv.checkin!=''&&this.reserv.checkout!=''&&this.reserv.noofguest!=''&&this.reserv.totalPayment!=''))
+  {
+    this.reservationService.addReservationList(this.reservation).subscribe(data => {
+    this.reservation = data.resList;
+    });
+  }
+  else{
+    alert("fields are empty!!");
+    console.log("Fields are empty!!");
+  }
+
 
     this.api.addReservationList(this.res).subscribe(data => {
       console.log(data.resList);

@@ -1,14 +1,16 @@
 <section class="header">
     <div class="container">
-        <form [formGroup]="formValue">
+         <form [formGroup]="formValue">
+
             <h1>Confirm Your Payment</h1>
 
             <div class="first-row">
                 <div class="owner">
-                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <label for="exampleInputEmail1" class="form-label">Card Holder Name</label>
                     <input type="text" formControlName="name" placeholder="Name" class="form-control"
                         id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
+
                 <div class="cvv">
                     <label for="exampleInputEmail1" class="form-label">CVV</label>
                     <input type="text" formControlName="cvv" placeholder="Name" class="form-control"
